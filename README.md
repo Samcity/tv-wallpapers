@@ -16,8 +16,8 @@ Any image format works: JPG, PNG, WEBP, HEIC (iPhone).
 
 Paste one of these into Overflight's custom URL setting:
 
-- All photos: `https://raw.githubusercontent.com/OWNER/REPO/main/wallpapers.json`
-- One collection: `https://raw.githubusercontent.com/OWNER/REPO/main/collections/<folder-name>.json`
+- All photos: `https://raw.githubusercontent.com/Samcity/tv-wallpapers/main/wallpapers.json`
+- One collection: `https://raw.githubusercontent.com/Samcity/tv-wallpapers/main/collections/<folder-name>.json`
 
 Each entry's `location` is set to the collection name, so Overflight's keyword filter
 can also narrow the full list down to one collection.
