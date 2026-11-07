@@ -70,11 +70,19 @@ def main() -> None:
         path = optimise(path)
         rel = path.relative_to(ROOT).as_posix()
         collection = path.relative_to(PHOTOS).parts[0] if path.parent != PHOTOS else "uncategorised"
+        url = base + urllib.parse.quote(rel)
         entry = {
             "location": pretty(collection),
             "title": pretty(path.stem),
             "author": "",
-            "url_img": base + urllib.parse.quote(rel),
+            "url_img": url,
+            # Overflight only reads url_img when its "fallback" setting is on, so the
+            # same link goes in every quality field too. It still shows as a picture,
+            # because Overflight treats a link that matches url_img as an image.
+            "url_1080p": url,
+            "url_1080p_hdr": url,
+            "url_4k": url,
+            "url_4k_hdr": url,
         }
         everything.append(entry)
         per_collection.setdefault(collection, []).append(entry)
